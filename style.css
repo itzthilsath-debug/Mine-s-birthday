@@ -306,7 +306,7 @@ body {
     font-weight: 300;
 }
 
-/* 3D Envelope */
+/* ===== 3D Envelope ===== */
 .envelope-3d {
     width: 200px;
     height: 140px;
@@ -687,82 +687,82 @@ body {
     z-index: 3;
 }
 
-.candle-3d {
+.candle-3d.big-candle {
     position: relative;
-    width: 8px;
-    height: 55px;
+    width: 20px;
+    height: 80px;
     cursor: pointer;
     transition: var(--transition);
 }
 
-.candle-3d:hover {
+.candle-3d.big-candle:hover {
     transform: scale(1.1);
 }
 
-.candle-body {
+.candle-3d.big-candle .candle-body {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, var(--gold), #a87c3a);
-    border-radius: 3px;
-    box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: inset -2px 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.candle-3d.blown .candle-body {
+.candle-3d.big-candle.blown .candle-body {
     background: linear-gradient(180deg, #b8a090, #8a7a70);
 }
 
-.flame-3d {
+.candle-3d.big-candle .big-flame {
     position: absolute;
-    top: -22px;
+    top: -35px;
     left: 50%;
     transform: translateX(-50%);
-    width: 14px;
-    height: 22px;
+    width: 25px;
+    height: 38px;
     pointer-events: none;
     transition: var(--transition);
 }
 
-.flame-inner {
+.candle-3d.big-candle .big-flame .flame-inner {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 50% 30%, #fff6cf, #ffb347 50%, transparent 70%);
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    animation: flicker3d 0.5s ease-in-out infinite alternate;
+    animation: bigFlicker 0.5s ease-in-out infinite alternate;
 }
 
-@keyframes flicker3d {
+@keyframes bigFlicker {
     0% {
-        transform: scale(1) rotate(-2deg);
+        transform: scale(1) rotate(-3deg);
     }
 
     100% {
-        transform: scale(1.15) rotate(2deg);
+        transform: scale(1.2) rotate(3deg);
     }
 }
 
-.candle-3d.blown .flame-3d {
+.candle-3d.big-candle.blown .big-flame {
     opacity: 0;
     transform: translateX(-50%) scale(0);
 }
 
-.candle-smoke {
+.candle-3d.big-candle .candle-smoke {
     position: absolute;
-    top: -30px;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     opacity: 0;
     pointer-events: none;
 }
 
-.candle-3d.blown .candle-smoke {
-    animation: smokeRise 1.5s ease-out forwards;
+.candle-3d.big-candle.blown .candle-smoke {
+    animation: smokeRiseBig 1.5s ease-out forwards;
 }
 
-@keyframes smokeRise {
+@keyframes smokeRiseBig {
     0% {
         opacity: 0.6;
         transform: translate(-50%, 0) scale(1);
@@ -770,7 +770,7 @@ body {
 
     100% {
         opacity: 0;
-        transform: translate(-50%, -40px) scale(3);
+        transform: translate(-50%, -60px) scale(4);
     }
 }
 
@@ -840,56 +840,44 @@ body {
 }
 
 /* ============================================================
-   MEMORIES CAROUSEL - FULL RESPONSIVE
+   MEMORIES - 4 SQUARES GRID (FIXED)
    ============================================================ */
 .memories-section {
     background: var(--primary);
-    padding: 40px 16px;
+    padding: 60px 20px;
 }
 
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    padding: 0 10px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    gap: 16px;
-}
-
-.carousel-slide {
-    min-width: calc(100% - 0px);
-    flex-shrink: 0;
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .memory-card {
     background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius);
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(185, 143, 219, 0.1);
-    transition: var(--transition);
-    height: 100%;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
 }
 
 .memory-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
     border-color: rgba(185, 143, 219, 0.3);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
 }
 
 .memory-image {
-    width: 500px;
-    max-width: 100%;
+    width: 100%;
     aspect-ratio: 1 / 1;
     display: block;
-    position: relative;
     overflow: hidden;
     background: #2a1b3d;
-    margin: 0 auto;
 }
 
 .memory-image img {
@@ -897,10 +885,15 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
+}
+
+.memory-card:hover .memory-image img {
+    transform: scale(1.05);
 }
 
 .memory-info {
-    padding: 14px 16px;
+    padding: 14px 16px 18px;
     flex: 1;
 }
 
@@ -915,88 +908,31 @@ body {
     color: rgba(255, 248, 231, 0.6);
     font-size: 0.85rem;
     font-weight: 300;
+    line-height: 1.4;
 }
 
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid rgba(185, 143, 219, 0.2);
-    background: rgba(31, 15, 56, 0.8);
-    backdrop-filter: blur(10px);
-    color: var(--white);
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: var(--transition);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-btn:hover {
-    background: var(--gold);
-    color: var(--primary);
-    border-color: var(--gold);
-}
-
-.carousel-btn.prev {
-    left: 0;
-}
-
-.carousel-btn.next {
-    right: 0;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.carousel-dot.active {
-    background: var(--gold);
-    width: 20px;
-    border-radius: 4px;
-}
-
-/* ============================================================
-   TABLET RESPONSIVE
-   ============================================================ */
-@media (min-width: 600px) and (max-width: 1024px) {
-    .carousel-slide {
-        min-width: calc(50% - 8px);
-    }
-
-    .carousel-container {
-        padding: 0 20px;
+/* ===== RESPONSIVE MEMORIES ===== */
+@media (max-width: 600px) {
+    .memories-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 400px;
     }
 }
 
-/* ============================================================
-   DESKTOP RESPONSIVE
-   ============================================================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .memories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        max-width: 700px;
+    }
+}
+
 @media (min-width: 1025px) {
-    .carousel-slide {
-        min-width: calc(33.333% - 11px);
-    }
-
-    .carousel-container {
-        padding: 0 40px;
+    .memories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        max-width: 900px;
     }
 }
 
@@ -1176,9 +1112,7 @@ body {
     }
 }
 
-/* ============================================================
-   CHAT TOGGLE
-   ============================================================ */
+/* ===== CHAT TOGGLE ===== */
 .chat-toggle-container {
     display: flex;
     justify-content: center;
@@ -1215,9 +1149,7 @@ body {
     box-shadow: 0 4px 20px rgba(212, 175, 106, 0.3);
 }
 
-/* ============================================================
-   LIVE CHAT
-   ============================================================ */
+/* ===== LIVE CHAT ===== */
 .live-chat-container {
     background: rgba(255, 255, 255, 0.02);
     border-radius: var(--radius);
@@ -1464,46 +1396,16 @@ body {
     margin-bottom: 20px;
 }
 
-.song-embed {
-    margin: 16px 0;
-    width: 100%;
-}
-
-.song-embed iframe {
+.video-player-wrapper video {
     width: 100%;
     border-radius: 12px;
-    min-height: 200px;
+    background: #000;
 }
 
 .song-note-text {
     color: rgba(255, 248, 231, 0.3);
     font-size: 0.85rem;
     margin-top: 12px;
-}
-
-.song-controls {
-    margin-top: 20px;
-}
-
-.play-song-btn {
-    padding: 12px 28px;
-    border-radius: 50px;
-    border: none;
-    background: linear-gradient(135deg, var(--gold), #c4964a);
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(212, 175, 106, 0.3);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.play-song-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(212, 175, 106, 0.4);
 }
 
 /* ============================================================
@@ -1608,12 +1510,6 @@ body {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 1024px) {
-    .carousel-slide {
-        min-width: calc(50% - 12px);
-    }
-}
-
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -1635,14 +1531,6 @@ body {
 
     .nav-toggle {
         display: block;
-    }
-
-    .carousel-slide {
-        min-width: calc(100% - 0px);
-    }
-
-    .carousel-container {
-        padding: 0;
     }
 
     .letter-paper {
@@ -1711,10 +1599,6 @@ body {
     .song-title-text {
         font-size: 1.2rem;
     }
-
-    .song-embed iframe {
-        height: 180px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1733,28 +1617,87 @@ body {
 }
 
 /* ============================================================
-   REDUCED MOTION
-   ============================================================ */
-/* ============================================================
-   GLOBAL ANTI-GRAVITY LEVITATION THEME
+   ANTI-GRAVITY LEVITATION
    ============================================================ */
 @keyframes levitate {
-    0%, 100% { translate: 0 0; }
-    50% { translate: 0 -12px; }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
-.hero-content { animation: levitate 6s ease-in-out infinite; }
-.cake-3d { animation: levitate 5s ease-in-out infinite 0.5s; }
+@keyframes levitateSlow {
 
-.memory-card { animation: levitate 5s ease-in-out infinite; }
-.carousel-slide:nth-child(2n) .memory-card { animation-delay: 1.2s; }
-.carousel-slide:nth-child(3n) .memory-card { animation-delay: 2.4s; }
-.carousel-slide:nth-child(4n) .memory-card { animation-delay: 0.8s; }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
 
-.song-card { animation: levitate 6s ease-in-out infinite 1s; }
-.chat-container { animation: levitate 5.5s ease-in-out infinite 1.5s; }
-.ps-card { animation: levitate 4.5s ease-in-out infinite 2s; }
+    50% {
+        transform: translateY(-8px);
+    }
+}
 
+.hero-content {
+    animation: levitate 6s ease-in-out infinite;
+}
+
+.cake-3d {
+    animation: levitate 5s ease-in-out infinite 0.5s;
+}
+
+.memory-card {
+    animation: levitate 5s ease-in-out infinite;
+}
+
+.memory-card:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.memory-card:nth-child(3) {
+    animation-delay: 2.4s;
+}
+
+.memory-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.song-card {
+    animation: levitate 6s ease-in-out infinite 1s;
+}
+
+.chat-container {
+    animation: levitateSlow 5.5s ease-in-out infinite 1.5s;
+}
+
+.ps-card {
+    animation: levitate 4.5s ease-in-out infinite 2s;
+}
+
+.letter-paper {
+    animation: levitateSlow 5s ease-in-out infinite 0.3s;
+}
+
+.timeline-item {
+    animation: levitateSlow 4s ease-in-out infinite;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -1764,17 +1707,21 @@ body {
     .gradient-orb,
     .flame-inner,
     .scroll-indicator,
-    .live-dot {
+    .live-dot,
+    .hero-content,
+    .cake-3d,
+    .memory-card,
+    .song-card,
+    .chat-container,
+    .ps-card,
+    .letter-paper,
+    .timeline-item {
         animation: none !important;
     }
 
     .envelope-inner,
     .envelope-flap,
     .envelope-letter {
-        transition: none !important;
-    }
-
-    .carousel-track {
         transition: none !important;
     }
 }
