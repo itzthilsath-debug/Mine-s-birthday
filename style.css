@@ -1594,6 +1594,8 @@ body {
 
     .song-card {
         padding: 24px 16px;
+        animation: none !important;
+        transform: translateY(0) !important;
     }
 
     .song-title-text {
