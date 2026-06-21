@@ -116,37 +116,10 @@
                         <div class="cake-tier tier-1"></div>
                         <div class="cake-icing"></div>
                         <div class="candles-container" id="candlesContainer">
-                            <div class="candle-3d" data-index="0">
+                            <!-- Single Big Candle -->
+                            <div class="candle-3d big-candle" data-index="0">
                                 <div class="candle-body"></div>
-                                <div class="flame-3d">
-                                    <div class="flame-inner"></div>
-                                </div>
-                                <div class="candle-smoke"></div>
-                            </div>
-                            <div class="candle-3d" data-index="1">
-                                <div class="candle-body"></div>
-                                <div class="flame-3d">
-                                    <div class="flame-inner"></div>
-                                </div>
-                                <div class="candle-smoke"></div>
-                            </div>
-                            <div class="candle-3d" data-index="2">
-                                <div class="candle-body"></div>
-                                <div class="flame-3d">
-                                    <div class="flame-inner"></div>
-                                </div>
-                                <div class="candle-smoke"></div>
-                            </div>
-                            <div class="candle-3d" data-index="3">
-                                <div class="candle-body"></div>
-                                <div class="flame-3d">
-                                    <div class="flame-inner"></div>
-                                </div>
-                                <div class="candle-smoke"></div>
-                            </div>
-                            <div class="candle-3d" data-index="4">
-                                <div class="candle-body"></div>
-                                <div class="flame-3d">
+                                <div class="flame-3d big-flame">
                                     <div class="flame-inner"></div>
                                 </div>
                                 <div class="candle-smoke"></div>
@@ -156,7 +129,7 @@
                     <div class="cake-plate"></div>
                 </div>
                 <div class="cake-status">
-                    <p id="cakeStatus">Tap each candle to blow it out 🕯️</p>
+                    <p id="cakeStatus">Tap the candle to blow it out 🕯️</p>
                     <div class="candle-progress">
                         <div class="progress-bar" id="progressBar"></div>
                     </div>
@@ -170,194 +143,219 @@
     <!-- ============================================================ -->
     <!-- ===== MEMORIES - PHOTO PATHS MATTUM CHANGE PANNU ===== -->
     <!-- ============================================================ -->
-    <section class="memories-section" id="memories">
-        <div class="section-container">
-            <span class="section-tag" data-aos="fade-up">📸 Memories</span>
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">The Moments That Mattered</h2>
-            <div class="carousel-container">
-                <button class="carousel-btn prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track" id="carouselTrack">
+                        <section class="memories-section" id="memories">
+                            <div class="section-container">
+                                <span class="section-tag" data-aos="fade-up">📸 Memories</span>
+                                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">The Moments That
+                                    Mattered</h2>
+                                <div class="carousel-container">
+                                    <button class="carousel-btn prev" id="carouselPrev"><i
+                                            class="fas fa-chevron-left"></i></button>
+                                    <div class="carousel-track" id="carouselTrack">
 
-                    <!-- 👇 PHOTO 1 - IMAGE PATH CHANGE PANNU 👇 -->
-                    <div class="carousel-slide">
-                        <div class="memory-card">
-                            <div class="memory-image">
-                                <img src="images/mem1.jpg" alt="Memory 1"
-                                    style="width:100%; height:100%; object-fit:contain;" />
+                                        <!-- 👇 PHOTO 1 - IMAGE PATH CHANGE PANNU 👇 -->
+                                        <div class="carousel-slide">
+                                            <div class="memory-card">
+                                                <div class="memory-image">
+                                                    <img src="images/mem1.jpg" alt="Memory 1"
+                                                        style="width:100%; height:100%; object-fit:contain;" />
+                                                </div>
+                                                <div class="memory-info">
+                                                    <h4>Elegance In Simplicity</h4>
+                                                    <p>The first time I saw you in this outfit, I couldn't stop looking.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 👇 PHOTO 2 - IMAGE PATH CHANGE PANNU 👇 -->
+                                        <div class="carousel-slide">
+                                            <div class="memory-card">
+                                                <div class="memory-image">
+                                                    <img src="images/mem2.jpg" alt="Memory 2"
+                                                        style="width:100%; height:100%; object-fit:contain;" />
+                                                </div>
+                                                <div class="memory-info">
+                                                    <h4>Wrapped In Red</h4>
+                                                    <p>The first saree, the first smile, a memory forever.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 👇 PHOTO 3 - IMAGE PATH CHANGE PANNU 👇 -->
+                                        <div class="carousel-slide">
+                                            <div class="memory-card">
+                                                <div class="memory-image">
+                                                    <img src="images/mem3.jpg" alt="Memory 3"
+                                                        style="width:100%; height:100%; object-fit:contain;" />
+                                                </div>
+                                                <div class="memory-info">
+                                                    <h4>The First Glance</h4>
+                                                    <p>The day a stranger became someone special.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 👇 PHOTO 4 - IMAGE PATH CHANGE PANNU 👇 -->
+                                        <div class="carousel-slide">
+                                            <div class="memory-card">
+                                                <div class="memory-image">
+                                                    <img src="images\WhatsApp Image 2026-06-21 at 11.11.18 AM.jpeg"
+                                                        alt="Memory 4"
+                                                        style="width:100%; height:100%; object-fit:contain;" />
+                                                </div>
+                                                <div class="memory-info">
+                                                    <h4>Captured By Me</h4>
+                                                    <p>One of my favorite photos, one of my favorite people.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <button class="carousel-btn next" id="carouselNext"><i
+                                            class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <div class="carousel-dots" id="carouselDots"></div>
                             </div>
-                            <div class="memory-info">
-                                <h4>Elegance In Simplicity</h4>
-                                <p>The first time I saw you in this outfit, I couldn't stop looking.</p>
+                        </section>
+
+                        <section class="letter-section" id="letter">
+                            <div class="section-container">
+                                <span class="section-tag" data-aos="fade-up">💌 A Letter</span>
+                                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Things I Never Said
+                                    Out Loud</h2>
+                                <div class="letter-paper" data-aos="flip-up" data-aos-duration="1400">
+                                    <div class="letter-content">
+                                        <p class="letter-dropcap">Hafsa, thanks for being with me.</p>
+                                        <p>I don't want to say "I love you" anymore — but I want to say this.</p>
+                                        <p>That one year with you was unforgettable. Your time, your care, your smile —
+                                            everything was
+                                            precious to me.</p>
+                                        <p>But I know life moves on. You have your life, your future. Wherever you go,
+                                            I'm okay with it.</p>
+                                        <p>I love you — that's true. But it shouldn't hold you back. If you don't feel
+                                            anything for me,
+                                            that's okay. I fully accept it.</p>
+                                        <p>There's no replacement for you — ever. But I want you to enjoy your life
+                                            fully. You and your
+                                            partner should be happy. That's all I want.</p>
+                                        <p>You're an evergreen memory in my life. No one can change that. But that
+                                            doesn't mean I should
+                                            stop my life either.</p>
+                                        <p>Live your life. Be happy. That's my last wish.</p>
+                                        <p>Happy Birthday, Hafsa. You deserve everything good. 💜</p>
+                                        <div class="letter-signature">
+                                            <p>Yours, quietly,</p>
+                                            <p class="signature-name">— Always wishing you the best 💜</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </section>
 
-                    <!-- 👇 PHOTO 2 - IMAGE PATH CHANGE PANNU 👇 -->
-                    <div class="carousel-slide">
-                        <div class="memory-card">
-                            <div class="memory-image">
-                                <img src="images/mem2.jpg" alt="Memory 2"
-                                    style="width:100%; height:100%; object-fit:contain;" />
+                        <section class="chat-section" id="chat">
+                            <div class="section-container">
+                                <span class="section-tag" data-aos="fade-up">💬 One Last Thing</span>
+                                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Can I Tell You
+                                    Something, Hafsa?</h2>
+                                <div class="chat-toggle-container" data-aos="fade-up">
+                                    <button class="chat-toggle-btn active" id="letterTab"><i
+                                            class="fas fa-envelope"></i> My Letter</button>
+                                    <button class="chat-toggle-btn" id="liveTab"><i class="fas fa-comment-dots"></i>
+                                        Live Reply</button>
+                                </div>
+                                <div class="chat-container" id="letterChat">
+                                    <div class="chat-messages" id="chatMessages"></div>
+                                    <div class="chat-typing" id="chatTyping"><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="chat-container live-chat-container" id="liveChat" style="display:none;">
+                                    <div class="live-chat-header">
+                                        <span class="live-dot"></span>
+                                        <span class="live-status">💜 Hafsa is online</span>
+                                        <button class="clear-chat-btn" id="clearChatBtn"><i
+                                                class="fas fa-trash-alt"></i></button>
+                                    </div>
+                                    <div class="live-chat-messages" id="liveChatMessages"></div>
+                                    <div class="live-chat-input-area">
+                                        <div class="emoji-quick">
+                                            <button onclick="addEmoji('❤️')">❤️</button>
+                                            <button onclick="addEmoji('😊')">😊</button>
+                                            <button onclick="addEmoji('🎂')">🎂</button>
+                                            <button onclick="addEmoji('💜')">💜</button>
+                                            <button onclick="addEmoji('✨')">✨</button>
+                                            <button onclick="addEmoji('🥺')">🥺</button>
+                                            <button onclick="addEmoji('🌹')">🌹</button>
+                                            <button onclick="addEmoji('💕')">💕</button>
+                                        </div>
+                                        <div class="live-input-row">
+                                            <input type="text" id="liveChatInput"
+                                                placeholder="Type your reply, Hafsa..." />
+                                            <button id="liveSendBtn"><i class="fas fa-paper-plane"></i></button>
+                                        </div>
+                                        <div class="live-chat-hint"><small>💾 Your messages are saved
+                                                automatically</small></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="memory-info">
-                                <h4>Wrapped In Red</h4>
-                                <p>The first saree, the first smile, a memory forever.</p>
+                        </section>
+
+                        <section class="song-section" id="song">
+                            <div class="section-container">
+                                <span class="section-tag" data-aos="fade-up">🎵 A Song For You</span>
+                                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">This One's For You,
+                                    Hafsa 💜</h2>
+                                <div class="song-wrapper" data-aos="flip-up" data-aos-duration="1200">
+                                    <div class="song-card">
+                                        <div class="song-icon">🎶</div>
+                                        <h3 class="song-title-text">"Yaen Endral"</h3>
+                                        <p class="song-artist-text">— For Hafsa 💜</p>
+                                        <div class="song-embed">
+                                            <iframe src="https://www.youtube.com/embed/UWpyWhgrYC8"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                        <p class="song-note-text">🎧 Put on headphones and listen 💜</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </section>
 
-                    <!-- 👇 PHOTO 3 - IMAGE PATH CHANGE PANNU 👇 -->
-                    <div class="carousel-slide">
-                        <div class="memory-card">
-                            <div class="memory-image">
-                                <img src="images/mem3.jpg" alt="Memory 3"
-                                    style="width:100%; height:100%; object-fit:contain;" />
+                        <section class="ps-section">
+                            <div class="section-container">
+                                <div class="ps-card" data-aos="zoom-in" data-aos-duration="1000">
+                                    <span class="ps-label">-The End-</span>
+                                    <p>I know August is close. I know what that means, and I am genuinely happy you've
+                                        found someone to
+                                        build a life with. This isn't a request for anything to change — only a small,
+                                        honest truth I wanted
+                                        to leave somewhere, before this particular chapter closes.</p>
+                                </div>
                             </div>
-                            <div class="memory-info">
-                                <h4>The First Glance</h4>
-                                <p>The day a stranger became someone special.</p>
+                        </section>
+
+                        <footer class="footer">
+                            <div class="section-container">
+                                <div class="footer-content">
+                                    <div class="footer-heart">💜</div>
+                                    <h2 class="footer-title">Happy Birthday, Hafsa</h2>
+                                    <p class="footer-text">Whatever this year brings you, I hope it holds even a
+                                        fraction of the
+                                        joy<br />you've quietly given the people around you.</p>
+                                    <p class="footer-signature">— With love, always</p>
+                                    <div class="footer-social">
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-spotify"></i></a>
+                                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                    </div>
+                                    <p class="footer-copy">Made with ❤️ for a special soul</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </footer>
 
-                    <!-- 👇 PHOTO 4 - IMAGE PATH CHANGE PANNU 👇 -->
-                    <div class="carousel-slide">
-                        <div class="memory-card">
-                            <div class="memory-image">
-                                <img src="images\WhatsApp Image 2026-06-21 at 11.11.18 AM.jpeg" alt="Memory 4"
-                                    style="width:100%; height:100%; object-fit:contain;" />
-                            </div>
-                            <div class="memory-info">
-                                <h4>Captured By Me</h4>
-                                <p>One of my favorite photos, one of my favorite people.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <button class="carousel-btn next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            <div class="carousel-dots" id="carouselDots"></div>
-        </div>
-    </section>
-
-    <section class="letter-section" id="letter">
-        <div class="section-container">
-            <span class="section-tag" data-aos="fade-up">💌 A Letter</span>
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Things I Never Said Out Loud</h2>
-            <div class="letter-paper" data-aos="flip-up" data-aos-duration="1400">
-                <div class="letter-content">
-                    <p class="letter-dropcap">Hafsa, thanks for being with me.</p>
-                    <p>I don't want to say "I love you" anymore — but I want to say this.</p>
-                    <p>That one year with you was unforgettable. Your time, your care, your smile — everything was
-                        precious to me.</p>
-                    <p>But I know life moves on. You have your life, your future. Wherever you go, I'm okay with it.</p>
-                    <p>I love you — that's true. But it shouldn't hold you back. If you don't feel anything for me,
-                        that's okay. I fully accept it.</p>
-                    <p>There's no replacement for you — ever. But I want you to enjoy your life fully. You and your
-                        partner should be happy. That's all I want.</p>
-                    <p>You're an evergreen memory in my life. No one can change that. But that doesn't mean I should
-                        stop my life either.</p>
-                    <p>Live your life. Be happy. That's my last wish.</p>
-                    <p>Happy Birthday, Hafsa. You deserve everything good. 💜</p>
-                    <div class="letter-signature">
-                        <p>Yours, quietly,</p>
-                        <p class="signature-name">— Always wishing you the best 💜</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="chat-section" id="chat">
-        <div class="section-container">
-            <span class="section-tag" data-aos="fade-up">💬 One Last Thing</span>
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Can I Tell You Something, Hafsa?</h2>
-            <div class="chat-toggle-container" data-aos="fade-up">
-                <button class="chat-toggle-btn active" id="letterTab"><i class="fas fa-envelope"></i> My Letter</button>
-                <button class="chat-toggle-btn" id="liveTab"><i class="fas fa-comment-dots"></i> Live Reply</button>
-            </div>
-            <div class="chat-container" id="letterChat">
-                <div class="chat-messages" id="chatMessages"></div>
-                <div class="chat-typing" id="chatTyping"><span></span><span></span><span></span></div>
-            </div>
-            <div class="chat-container live-chat-container" id="liveChat" style="display:none;">
-                <div class="live-chat-header">
-                    <span class="live-dot"></span>
-                    <span class="live-status">💜 Hafsa is online</span>
-                    <button class="clear-chat-btn" id="clearChatBtn"><i class="fas fa-trash-alt"></i></button>
-                </div>
-                <div class="live-chat-messages" id="liveChatMessages"></div>
-                <div class="live-chat-input-area">
-                    <div class="emoji-quick">
-                        <button onclick="addEmoji('❤️')">❤️</button>
-                        <button onclick="addEmoji('😊')">😊</button>
-                        <button onclick="addEmoji('🎂')">🎂</button>
-                        <button onclick="addEmoji('💜')">💜</button>
-                        <button onclick="addEmoji('✨')">✨</button>
-                        <button onclick="addEmoji('🥺')">🥺</button>
-                        <button onclick="addEmoji('🌹')">🌹</button>
-                        <button onclick="addEmoji('💕')">💕</button>
-                    </div>
-                    <div class="live-input-row">
-                        <input type="text" id="liveChatInput" placeholder="Type your reply, Hafsa..." />
-                        <button id="liveSendBtn"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                    <div class="live-chat-hint"><small>💾 Your messages are saved automatically</small></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="song-section" id="song">
-        <div class="section-container">
-            <span class="section-tag" data-aos="fade-up">🎵 A Song For You</span>
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">This One's For You, Hafsa 💜</h2>
-            <div class="song-wrapper" data-aos="flip-up" data-aos-duration="1200">
-                <div class="song-card">
-                    <div class="song-icon">🎶</div>
-                    <h3 class="song-title-text">"Yaen Endral"</h3>
-                    <p class="song-artist-text">— For Hafsa 💜</p>
-                    <div class="song-embed">
-                        <iframe src="https://www.youtube.com/embed/UWpyWhgrYC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <p class="song-note-text">🎧 Put on headphones and listen 💜</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ps-section">
-        <div class="section-container">
-            <div class="ps-card" data-aos="zoom-in" data-aos-duration="1000">
-                <span class="ps-label">-The End-</span>
-                <p>I know August is close. I know what that means, and I am genuinely happy you've found someone to
-                    build a life with. This isn't a request for anything to change — only a small, honest truth I wanted
-                    to leave somewhere, before this particular chapter closes.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="section-container">
-            <div class="footer-content">
-                <div class="footer-heart">💜</div>
-                <h2 class="footer-title">Happy Birthday, Hafsa</h2>
-                <p class="footer-text">Whatever this year brings you, I hope it holds even a fraction of the
-                    joy<br />you've quietly given the people around you.</p>
-                <p class="footer-signature">— With love, always</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-spotify"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-                <p class="footer-copy">Made with ❤️ for a special soul</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+                        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                        <script src="script.js"></script>
 </body>
 
 </html>

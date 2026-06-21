@@ -1,7 +1,7 @@
 // ============================================================
 // INITIALIZE AOS
 // ============================================================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================================
 // PRELOADER HIDE
 // ============================================================
-window.addEventListener('load', function() {
-    setTimeout(function() {
+window.addEventListener('load', function () {
+    setTimeout(function () {
         var preloader = document.getElementById('preloader');
         if (preloader) {
             preloader.classList.add('hide');
@@ -30,7 +30,7 @@ var navbar = document.getElementById('navbar');
 var navToggle = document.getElementById('navToggle');
 var navLinks = document.querySelector('.nav-links');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (window.scrollY > 50) {
         if (navbar) navbar.classList.add('scrolled');
     } else {
@@ -39,14 +39,14 @@ window.addEventListener('scroll', function() {
 });
 
 if (navToggle) {
-    navToggle.addEventListener('click', function() {
+    navToggle.addEventListener('click', function () {
         if (navLinks) navLinks.classList.toggle('active');
     });
 }
 
 if (navLinks) {
-    document.querySelectorAll('.nav-links a').forEach(function(link) {
-        link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
             navLinks.classList.remove('active');
         });
     });
@@ -86,7 +86,7 @@ function openEnvelope() {
     envelope.classList.toggle('opened');
     if (envelope.classList.contains('opened')) {
         createConfetti(30);
-        setTimeout(function() {
+        setTimeout(function () {
             var story = document.getElementById('story');
             if (story) {
                 story.scrollIntoView({ behavior: 'smooth' });
@@ -110,8 +110,8 @@ function createConfetti(count) {
     var colors = ['#d4af6a', '#b98fdb', '#e8b4d9', '#fff8e7', '#9b6bc4', '#f0dba0'];
 
     for (var i = 0; i < count; i++) {
-        (function(i) {
-            setTimeout(function() {
+        (function (i) {
+            setTimeout(function () {
                 var el = document.createElement('div');
                 var size = Math.random() * 8 + 4;
                 var isCircle = Math.random() > 0.5;
@@ -125,7 +125,7 @@ function createConfetti(count) {
                     'animation:confettiFall ' + (Math.random() * 2 + 2) +
                     's linear forwards;--drift:' + drift + 'px;';
                 document.body.appendChild(el);
-                setTimeout(function() {
+                setTimeout(function () {
                     if (el.parentNode) el.remove();
                 }, 4000);
             }, i * 30);
@@ -155,8 +155,8 @@ var cutBtn = document.getElementById('cutCakeBtn');
 var blownCount = 0;
 
 if (candles.length > 0) {
-    candles.forEach(function(candle) {
-        candle.addEventListener('click', function() {
+    candles.forEach(function (candle) {
+        candle.addEventListener('click', function () {
             if (this.classList.contains('blown')) return;
             this.classList.add('blown');
             blownCount++;
@@ -186,7 +186,7 @@ if (candles.length > 0) {
 }
 
 if (cutBtn) {
-    cutBtn.addEventListener('click', function() {
+    cutBtn.addEventListener('click', function () {
         if (statusText) {
             statusText.textContent = '🍰 Here\'s to a sweet year ahead! 🎉';
         }
@@ -196,7 +196,7 @@ if (cutBtn) {
         var cake3d = document.querySelector('.cake-3d');
         if (cake3d) {
             cake3d.style.transform = 'scale(0.95)';
-            setTimeout(function() {
+            setTimeout(function () {
                 cake3d.style.transform = 'scale(1)';
             }, 300);
         }
@@ -204,21 +204,20 @@ if (cutBtn) {
 }
 
 // ============================================================
-// CAROUSEL
+// CAROUSEL - NO AUTO SLIDE
 // ============================================================
 var track = document.getElementById('carouselTrack');
 var slides = document.querySelectorAll('.carousel-slide');
 var dotsContainer = document.getElementById('carouselDots');
 var currentIndex = 0;
 var totalSlides = slides.length;
-var autoSlideInterval;
 
 if (track && slides.length > 0 && dotsContainer) {
-    slides.forEach(function(_, i) {
+    slides.forEach(function (_, i) {
         var dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
         dot.dataset.index = i;
-        dot.addEventListener('click', function() {
+        dot.addEventListener('click', function () {
             goToSlide(parseInt(this.dataset.index));
         });
         dotsContainer.appendChild(dot);
@@ -233,7 +232,7 @@ if (track && slides.length > 0 && dotsContainer) {
         track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
 
         var dots = document.querySelectorAll('.carousel-dot');
-        dots.forEach(function(dot, i) {
+        dots.forEach(function (dot, i) {
             dot.classList.toggle('active', i === currentIndex);
         });
     }
@@ -250,33 +249,20 @@ if (track && slides.length > 0 && dotsContainer) {
     var prevBtn = document.querySelector('.carousel-btn.prev');
 
     if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
+        nextBtn.addEventListener('click', function () {
             nextSlide();
-            resetAutoSlide();
         });
     }
     if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
+        prevBtn.addEventListener('click', function () {
             prevSlide();
-            resetAutoSlide();
         });
     }
 
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 4000);
-    }
-
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-    }
-
-    startAutoSlide();
-
     var resizeTimeout;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
+        resizeTimeout = setTimeout(function () {
             goToSlide(currentIndex);
         }, 200);
     });
@@ -318,7 +304,7 @@ function startChat() {
 
         var delay = Math.min(1500, 500 + chatMessagesData[index].length * 15);
 
-        setTimeout(function() {
+        setTimeout(function () {
             if (typingIndicator) typingIndicator.classList.remove('active');
 
             var bubble = document.createElement('div');
@@ -351,7 +337,7 @@ var letterChat = document.getElementById('letterChat');
 var liveChat = document.getElementById('liveChat');
 
 if (letterTab && liveTab && letterChat && liveChat) {
-    letterTab.addEventListener('click', function() {
+    letterTab.addEventListener('click', function () {
         letterTab.classList.add('active');
         liveTab.classList.remove('active');
         letterChat.style.display = 'flex';
@@ -361,7 +347,7 @@ if (letterTab && liveTab && letterChat && liveChat) {
         }
     });
 
-    liveTab.addEventListener('click', function() {
+    liveTab.addEventListener('click', function () {
         liveTab.classList.add('active');
         letterTab.classList.remove('active');
         letterChat.style.display = 'none';
@@ -397,7 +383,7 @@ function loadLiveMessages() {
         var saved = localStorage.getItem('hafsaLiveChat');
         if (saved && saved !== '[]') {
             var messages = JSON.parse(saved);
-            messages.forEach(function(msg) {
+            messages.forEach(function (msg) {
                 displayLiveMessage(msg.text, msg.sender, msg.time);
             });
         } else {
@@ -430,11 +416,11 @@ function sendLiveMessage() {
         var saved = JSON.parse(localStorage.getItem('hafsaLiveChat') || '[]');
         saved.push({ text: text, sender: 'You', time: time });
         localStorage.setItem('hafsaLiveChat', JSON.stringify(saved));
-    } catch (e) {}
+    } catch (e) { }
 
     liveInput.value = '';
 
-    setTimeout(function() {
+    setTimeout(function () {
         var reply = replies[Math.floor(Math.random() * replies.length)];
         var replyTime = new Date().toLocaleTimeString();
         displayLiveMessage(reply, 'Hafsa 💜', replyTime);
@@ -443,14 +429,14 @@ function sendLiveMessage() {
             var saved = JSON.parse(localStorage.getItem('hafsaLiveChat') || '[]');
             saved.push({ text: reply, sender: 'Hafsa 💜', time: replyTime });
             localStorage.setItem('hafsaLiveChat', JSON.stringify(saved));
-        } catch (e) {}
+        } catch (e) { }
 
         createConfetti(10);
     }, 1000 + Math.random() * 1500);
 }
 
 // Emoji helper - Make it global
-window.addEmoji = function(emoji) {
+window.addEmoji = function (emoji) {
     if (liveInput) {
         liveInput.value += emoji;
         liveInput.focus();
@@ -458,11 +444,11 @@ window.addEmoji = function(emoji) {
 };
 
 if (clearBtn) {
-    clearBtn.addEventListener('click', function() {
+    clearBtn.addEventListener('click', function () {
         if (confirm('Clear all chat messages?')) {
             try {
                 localStorage.removeItem('hafsaLiveChat');
-            } catch (e) {}
+            } catch (e) { }
             if (liveMessages) {
                 liveMessages.innerHTML = '';
                 displayLiveMessage('✨ Chat cleared. Start fresh! 💜', 'System', new Date().toLocaleTimeString());
@@ -475,7 +461,7 @@ if (liveSendBtn) {
     liveSendBtn.addEventListener('click', sendLiveMessage);
 }
 if (liveInput) {
-    liveInput.addEventListener('keydown', function(e) {
+    liveInput.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') sendLiveMessage();
     });
 }
@@ -488,8 +474,8 @@ loadLiveMessages();
 // ============================================================
 var chatSection = document.getElementById('chat');
 if (chatSection) {
-    var chatObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+    var chatObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting && !chatStarted) {
                 startChat();
                 chatObserver.unobserve(entry.target);
@@ -502,8 +488,8 @@ if (chatSection) {
 // ============================================================
 // SMOOTH SCROLL FOR NAV LINKS
 // ============================================================
-document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
+document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         var target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -518,7 +504,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
 // ============================================================
 // PARALLAX EFFECT
 // ============================================================
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     var scrolled = window.scrollY;
     var heroContent = document.querySelector('.hero-content');
     var bgOrbs = document.querySelectorAll('.gradient-orb');
@@ -528,7 +514,7 @@ window.addEventListener('scroll', function() {
         heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.3;
     }
 
-    bgOrbs.forEach(function(orb, i) {
+    bgOrbs.forEach(function (orb, i) {
         var speed = 0.02 + (i + 1) * 0.01;
         orb.style.transform = 'translate(' + (scrolled * speed * 0.3) + 'px, ' + (scrolled * speed * 0.2) + 'px)';
     });
@@ -538,7 +524,7 @@ window.addEventListener('scroll', function() {
 // REDUCED MOTION CHECK
 // ============================================================
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.carousel-btn, .cut-cake-btn, .hero-btn').forEach(function(el) {
+    document.querySelectorAll('.carousel-btn, .cut-cake-btn, .hero-btn').forEach(function (el) {
         el.style.transition = 'none';
     });
 }

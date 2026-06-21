@@ -833,8 +833,10 @@ body {
     cursor: not-allowed;
 }
 
-//* ============================================================
-MEMORIES CAROUSEL - FULL RESPONSIVE============================================================*/ .memories-section {
+/* ============================================================
+   MEMORIES CAROUSEL - FULL RESPONSIVE
+   ============================================================ */
+.memories-section {
     background: var(--primary);
     padding: 40px 16px;
 }
