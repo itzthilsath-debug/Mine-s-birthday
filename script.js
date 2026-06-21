@@ -543,29 +543,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     });
 }
 
-// ============================================================
-// SONG VIDEO CONTROLS
-// ============================================================
-var playSongBtn = document.getElementById('playSongBtn');
-var songVideo = document.getElementById('songVideo');
 
-if (playSongBtn && songVideo) {
-    playSongBtn.addEventListener('click', function() {
-        if (songVideo.paused) {
-            songVideo.play();
-        } else {
-            songVideo.pause();
-        }
-    });
-
-    songVideo.addEventListener('play', function() {
-        playSongBtn.innerHTML = '<i class="fas fa-pause"></i> Pause Song';
-    });
-
-    songVideo.addEventListener('pause', function() {
-        playSongBtn.innerHTML = '<i class="fas fa-play"></i> Play Song';
-    });
-}
 
 console.log('💜 Happy Birthday, Hafsa! Made with love 💜');
 console.log('💜 Always stay happy, Hafsa! 💜');
