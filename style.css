@@ -882,12 +882,14 @@ body {
 }
 
 .memory-image {
-    width: 100%;
+    width: 500px;
+    max-width: 100%;
     aspect-ratio: 1 / 1;
     display: block;
     position: relative;
     overflow: hidden;
     background: #2a1b3d;
+    margin: 0 auto;
 }
 
 .memory-image img {
