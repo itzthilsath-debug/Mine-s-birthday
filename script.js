@@ -198,6 +198,8 @@ if (cutBtn) {
             cake3d.style.transform = 'scale(0.95)';
             setTimeout(function () {
                 cake3d.style.transform = 'scale(1)';
+                var cakeBase = document.querySelector('.cake-base');
+                if (cakeBase) cakeBase.classList.add('cut');
             }, 300);
         }
     });
